@@ -24,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D2:frame")
+tracks/1/path = NodePath("dead:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -172,7 +172,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/path = NodePath("dead:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -275,7 +275,8 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 position = Vector2(7, -4)
 script = ExtResource("1_nbl5i")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="dead" type="Sprite2D" parent="."]
+position = Vector2(314, 82)
 texture = ExtResource("2_ybjkn")
 hframes = 4
 vframes = 4
