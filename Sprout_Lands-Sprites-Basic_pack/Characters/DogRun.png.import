@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bygl5r3qn08q8"
-path="res://.godot/imported/MicrosoftTeams-image.png-5c3a1f58921cd033461a93f77ac019ff.ctex"
+uid="uid://bb55j0ravodav"
+path="res://.godot/imported/DogRun.png-7184cb588307ccba1249598dbaa6e2ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout_Lands-Sprites-Basic_pack/Map/MicrosoftTeams-image.png"
-dest_files=["res://.godot/imported/MicrosoftTeams-image.png-5c3a1f58921cd033461a93f77ac019ff.ctex"]
+source_file="res://Sprout_Lands-Sprites-Basic_pack/Characters/DogRun.png"
+dest_files=["res://.godot/imported/DogRun.png-7184cb588307ccba1249598dbaa6e2ae.ctex"]
 
 [params]
 

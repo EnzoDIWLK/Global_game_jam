@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://bs8td253puoyc"]
+
+[ext_resource type="Texture2D" uid="uid://xn7wevky1xyk" path="res://Sprout_Lands-Sprites-Basic_pack/Characters/DogIdle.png" id="1_2yskl"]
+
+[sub_resource type="GDScript" id="GDScript_ch843"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+
+
+
+func _physics_process(delta):
+	get_node(\"AnimatedSprite2D\").play(\"Idle\");
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbo72"]
+atlas = ExtResource("1_2yskl")
+region = Rect2(0, 24, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3eyi5"]
+atlas = ExtResource("1_2yskl")
+region = Rect2(48, 24, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_majjc"]
+atlas = ExtResource("1_2yskl")
+region = Rect2(96, 24, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5la7c"]
+atlas = ExtResource("1_2yskl")
+region = Rect2(144, 24, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr5sj"]
+atlas = ExtResource("1_2yskl")
+region = Rect2(96, 24, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n377r"]
+atlas = ExtResource("1_2yskl")
+region = Rect2(48, 24, 48, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wnexw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbo72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3eyi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_majjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5la7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr5sj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n377r")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gad4"]
+size = Vector2(45, 34)
+
+[node name="Chien" type="CharacterBody2D"]
+script = SubResource("GDScript_ch843")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16.5, 6.99998)
+scale = Vector2(1.52083, 1.41667)
+sprite_frames = SubResource("SpriteFrames_wnexw")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, 7)
+shape = SubResource("RectangleShape2D_1gad4")

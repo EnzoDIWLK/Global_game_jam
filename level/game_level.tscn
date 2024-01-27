@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcuhr73d1ybh4"]
+[gd_scene load_steps=5 format=3 uid="uid://bcuhr73d1ybh4"]
 
 [ext_resource type="PackedScene" uid="uid://bm25vsys6et4a" path="res://Characters/player.tscn" id="1_esnit"]
-[ext_resource type="PackedScene" path="res://level/map.tscn" id="2_isjkn"]
+[ext_resource type="PackedScene" uid="uid://72ymyxirfg4p" path="res://level/map.tscn" id="2_isjkn"]
+[ext_resource type="PackedScene" uid="uid://bs8td253puoyc" path="res://Chien/chien.tscn" id="3_20t28"]
+[ext_resource type="PackedScene" uid="uid://ddskh5c2yi1v8" path="res://Dinamite/Dinamite.tscn" id="4_hx8n3"]
 
 [node name="GameLevel" type="Node2D"]
 position = Vector2(-1, 0)
 
 [node name="Map" parent="." instance=ExtResource("2_isjkn")]
 position = Vector2(860, 144)
+
+[node name="Dinamite" parent="." instance=ExtResource("4_hx8n3")]
+position = Vector2(617, 851)
+
+[node name="Chien" parent="." instance=ExtResource("3_20t28")]
+position = Vector2(1695, -398)
 
 [node name="Player" parent="." instance=ExtResource("1_esnit")]

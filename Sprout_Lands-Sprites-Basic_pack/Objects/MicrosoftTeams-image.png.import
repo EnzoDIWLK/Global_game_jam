@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bygl5r3qn08q8"
-path="res://.godot/imported/MicrosoftTeams-image.png-5c3a1f58921cd033461a93f77ac019ff.ctex"
+uid="uid://u512oswy05rc"
+path="res://.godot/imported/MicrosoftTeams-image.png-4149bdcbc2d4a7ed5d8ee1d606363820.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout_Lands-Sprites-Basic_pack/Map/MicrosoftTeams-image.png"
-dest_files=["res://.godot/imported/MicrosoftTeams-image.png-5c3a1f58921cd033461a93f77ac019ff.ctex"]
+source_file="res://Sprout_Lands-Sprites-Basic_pack/Objects/MicrosoftTeams-image.png"
+dest_files=["res://.godot/imported/MicrosoftTeams-image.png-4149bdcbc2d4a7ed5d8ee1d606363820.ctex"]
 
 [params]
 

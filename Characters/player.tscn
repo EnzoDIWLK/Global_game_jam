@@ -1,10 +1,10 @@
 [gd_scene load_steps=28 format=3 uid="uid://bm25vsys6et4a"]
 
 [ext_resource type="Script" path="res://Characters/player.gd" id="1_nbl5i"]
-[ext_resource type="Texture2D" uid="uid://das6ub82dgk71" path="res://Sprout_Lands-Sprites-Basic_pack/Characters/image001.png" id="2_m3hrf"]
+[ext_resource type="Texture2D" uid="uid://kwp8pj5nkjd1" path="res://Sprout_Lands-Sprites-Basic_pack/Characters/MainPersonnage.png" id="2_lfm67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skr3x"]
-size = Vector2(12, 6)
+size = Vector2(31.625, 6)
 
 [sub_resource type="Animation" id="Animation_t8vy2"]
 length = 0.001
@@ -236,14 +236,17 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 script = ExtResource("1_nbl5i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_m3hrf")
+position = Vector2(21, -46)
+scale = Vector2(0.347005, 0.330599)
+texture = ExtResource("2_lfm67")
 hframes = 4
 vframes = 4
 
 [node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+zoom = Vector2(0.7, 0.7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(21, -21)
 shape = SubResource("RectangleShape2D_skr3x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
