@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcuhr73d1ybh4"]
+[gd_scene load_steps=6 format=3 uid="uid://bcuhr73d1ybh4"]
 
 [ext_resource type="PackedScene" uid="uid://bm25vsys6et4a" path="res://Characters/player.tscn" id="1_esnit"]
 [ext_resource type="PackedScene" uid="uid://72ymyxirfg4p" path="res://level/map.tscn" id="2_isjkn"]
 [ext_resource type="PackedScene" uid="uid://bs8td253puoyc" path="res://Chien/chien.tscn" id="3_20t28"]
 [ext_resource type="PackedScene" uid="uid://ddskh5c2yi1v8" path="res://Dinamite/Dinamite.tscn" id="4_hx8n3"]
+[ext_resource type="Texture2D" uid="uid://dvo4vqtjvpxu1" path="res://Sprout_Lands-Sprites-Basic_pack/Objects/Egg_item.png" id="5_h3i0e"]
 
 [node name="GameLevel" type="Node2D"]
 position = Vector2(-1, 0)
 
 [node name="Map" parent="." instance=ExtResource("2_isjkn")]
-position = Vector2(860, 144)
+position = Vector2(855, 146)
 
 [node name="Dinamite" parent="." instance=ExtResource("4_hx8n3")]
 position = Vector2(617, 851)
@@ -18,3 +19,7 @@ position = Vector2(617, 851)
 position = Vector2(1695, -398)
 
 [node name="Player" parent="." instance=ExtResource("1_esnit")]
+
+[node name="EggItem" type="Sprite2D" parent="."]
+position = Vector2(-560, -592)
+texture = ExtResource("5_h3i0e")

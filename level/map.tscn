@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://72ymyxirfg4p"]
+[gd_scene load_steps=9 format=3 uid="uid://72ymyxirfg4p"]
 
 [ext_resource type="Texture2D" uid="uid://bygl5r3qn08q8" path="res://Sprout_Lands-Sprites-Basic_pack/Map/MicrosoftTeams-image.png" id="1_0fvnd"]
 
@@ -11,10 +11,13 @@ script/source = "extends Node2D
 size = Vector2(171, 167)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3shd"]
-size = Vector2(160, 80.5)
+size = Vector2(66, 5.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrmwk"]
+size = Vector2(20.25, 80.2812)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bsl3"]
-size = Vector2(133, 84.25)
+size = Vector2(14.5, 85.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5f0k"]
 size = Vector2(106, 65.125)
@@ -42,11 +45,27 @@ position = Vector2(-1175, 64)
 shape = SubResource("RectangleShape2D_isjoo")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-1424, -692)
+position = Vector2(-1466, -654.875)
 shape = SubResource("RectangleShape2D_q3shd")
 
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1377, -654.562)
+shape = SubResource("RectangleShape2D_q3shd")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1493, -693)
+shape = SubResource("RectangleShape2D_lrmwk")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1354, -692)
+shape = SubResource("RectangleShape2D_lrmwk")
+
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-1424, -770)
+position = Vector2(-1483.25, -770.438)
+shape = SubResource("RectangleShape2D_0bsl3")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1365, -770)
 shape = SubResource("RectangleShape2D_0bsl3")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="CharacterBody2D"]
