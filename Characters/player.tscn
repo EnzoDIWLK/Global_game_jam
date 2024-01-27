@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://bm25vsys6et4a"]
+[gd_scene load_steps=32 format=3 uid="uid://bm25vsys6et4a"]
 
 [ext_resource type="Script" path="res://Characters/player.gd" id="1_nbl5i"]
 [ext_resource type="Texture2D" uid="uid://kwp8pj5nkjd1" path="res://Sprout_Lands-Sprites-Basic_pack/Characters/MainPersonnage.png" id="2_lfm67"]
+[ext_resource type="Texture2D" uid="uid://t6mqvxdwbueh" path="res://Sprout_Lands-Sprites-Basic_pack/Characters/dead.png" id="2_ybjkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skr3x"]
 size = Vector2(31.625, 6)
@@ -18,6 +19,18 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
 "values": [0]
 }
 
@@ -153,9 +166,26 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
+[sub_resource type="Animation" id="Animation_lx4ji"]
+resource_name = "dead"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ksuu7"]
 _data = {
 "RESET": SubResource("Animation_t8vy2"),
+"dead": SubResource("Animation_lx4ji"),
 "idle_down": SubResource("Animation_v18mf"),
 "idle_left": SubResource("Animation_iou4h"),
 "idle_right": SubResource("Animation_0go78"),
@@ -216,12 +246,19 @@ min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_83hrm"]
+animation = &"dead"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nnqr5"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_65mx2"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sacly"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n1ed1"]
+switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6fhmq"]
 states/End/position = Vector2(998, 100)
@@ -230,10 +267,18 @@ states/Idle/position = Vector2(289, 99)
 states/Start/position = Vector2(101, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_2j2qv")
 states/Walk/position = Vector2(493, 101)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_nnqr5"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_65mx2"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_sacly")]
+states/dead/node = SubResource("AnimationNodeAnimation_83hrm")
+states/dead/position = Vector2(663, 100)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_nnqr5"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_65mx2"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_sacly"), "Walk", "dead", SubResource("AnimationNodeStateMachineTransition_n1ed1")]
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(7, -4)
 script = ExtResource("1_nbl5i")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("2_ybjkn")
+hframes = 4
+vframes = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(21, -46)
