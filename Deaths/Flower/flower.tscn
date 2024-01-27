@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://i7i4i3ytoqt8"]
+[gd_scene load_steps=6 format=3 uid="uid://i7i4i3ytoqt8"]
 
 [ext_resource type="Texture2D" uid="uid://dvo4vqtjvpxu1" path="res://Sprout_Lands-Sprites-Basic_pack/Objects/Egg_item.png" id="1_1p7ma"]
 
@@ -6,8 +6,28 @@
 script/source = "extends CharacterBody2D
 
 
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = 0#ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+var player
+
 func _on_player_detection_body_entered(body):
-		print(body)
+	if body.name == \"Player\":
+		gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+		set_process(true)  # Enable the _physics_process function
+
+func _physics_process(delta):
+	velocity.y += gravity * delta
+	move_and_slide()
+
+
+
+func _on_death_detection_body_entered(body):
+	if body.name == \"Player\":
+		player = body
+		player.set_death(true)
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y2vke"]
@@ -15,8 +35,11 @@ radius = 6.0
 height = 14.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3q57b"]
-radius = 13.0
-height = 514.0
+radius = 6.0
+height = 142.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ikeqw"]
+radius = 12.0
 
 [node name="Flower" type="CharacterBody2D"]
 script = SubResource("GDScript_0lb47")
@@ -36,8 +59,15 @@ position = Vector2(2.5, -3.5)
 scale = Vector2(1.3125, 1.4375)
 
 [node name="Detection" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(1.14286, 165.913)
+position = Vector2(0.380953, 34.4348)
 scale = Vector2(0.761905, 0.695652)
 shape = SubResource("CapsuleShape2D_3q57b")
 
+[node name="DeathDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathDetection"]
+position = Vector2(2, -3)
+shape = SubResource("CircleShape2D_ikeqw")
+
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_entered" from="DeathDetection" to="." method="_on_death_detection_body_entered"]

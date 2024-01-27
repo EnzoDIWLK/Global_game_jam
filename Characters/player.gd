@@ -6,7 +6,11 @@ extends CharacterBody2D
  
 @onready var animation_tree = $AnimationTree
  
-var dead : bool = false
+@onready var dead : bool = false
+
+func set_death(value):
+	dead = value
+
 func _ready():
 	update_animation_parameters(starting_direction, dead)
  
@@ -22,7 +26,7 @@ func _physics_process(_delta):
  
 func update_animation_parameters(move_input : Vector2, is_dead : bool):
 	if dead:
-		#update dead
+		animation_tree.set("parameters/dead/blend_position", move_input)
 		return true
 	if (move_input != Vector2.ZERO):
 		animation_tree.set("parameters/Walk/blend_position", move_input)

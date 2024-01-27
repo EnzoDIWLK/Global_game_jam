@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://72ymyxirfg4p" path="res://level/map.tscn" id="2_isjkn"]
 [ext_resource type="PackedScene" uid="uid://bs8td253puoyc" path="res://Chien/chien.tscn" id="3_20t28"]
 [ext_resource type="PackedScene" uid="uid://ddskh5c2yi1v8" path="res://Dinamite/Dinamite.tscn" id="4_hx8n3"]
-[ext_resource type="Texture2D" uid="uid://dvo4vqtjvpxu1" path="res://Sprout_Lands-Sprites-Basic_pack/Objects/Egg_item.png" id="5_h3i0e"]
+[ext_resource type="PackedScene" uid="uid://i7i4i3ytoqt8" path="res://Deaths/Flower/flower.tscn" id="5_rulyo"]
 
 [node name="GameLevel" type="Node2D"]
 position = Vector2(-1, 0)
@@ -20,6 +20,5 @@ position = Vector2(1695, -398)
 
 [node name="Player" parent="." instance=ExtResource("1_esnit")]
 
-[node name="EggItem" type="Sprite2D" parent="."]
-position = Vector2(-560, -592)
-texture = ExtResource("5_h3i0e")
+[node name="Flower" parent="." instance=ExtResource("5_rulyo")]
+position = Vector2(-562, -591)
