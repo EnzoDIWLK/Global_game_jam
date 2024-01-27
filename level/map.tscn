@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://72ymyxirfg4p"]
 
-[ext_resource type="Texture2D" uid="uid://b5c5kh5gqprj6" path="res://Sprout_Lands-Sprites-Basic_pack/Map/MicrosoftTeams-image.png" id="1_0fvnd"]
+[ext_resource type="Texture2D" uid="uid://bc3gwa20yq1i0" path="res://Sprout_Lands-Sprites-Basic_pack/Map/MicrosoftTeams-image.png" id="1_0fvnd"]
 
 [sub_resource type="GDScript" id="GDScript_8nqbk"]
 script/source = "extends Node2D
