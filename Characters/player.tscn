@@ -240,6 +240,8 @@ texture = ExtResource("2_m3hrf")
 hframes = 4
 vframes = 4
 
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_skr3x")
