@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bws0p2ifxb5nm"
-path="res://.godot/imported/Hills.png-7836d8bceeb1ea4ffb3678065ca3ecdf.ctex"
+path="res://.godot/imported/Hills.png-8ad66773bc716e259c294487da422526.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png"
-dest_files=["res://.godot/imported/Hills.png-7836d8bceeb1ea4ffb3678065ca3ecdf.ctex"]
+source_file="res://Sprout_Lands-Sprites-Basic_pack/Tilesets/Hills.png"
+dest_files=["res://.godot/imported/Hills.png-8ad66773bc716e259c294487da422526.ctex"]
 
 [params]
 

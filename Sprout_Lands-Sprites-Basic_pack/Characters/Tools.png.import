@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgd1ptnr777ug"
-path="res://.godot/imported/Tools.png-84e7b7e26732f11135fd87fa085cf7a0.ctex"
+path="res://.godot/imported/Tools.png-4051a9180a2e161d848bd6c24306e691.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprout Lands - Sprites - Basic pack/Characters/Tools.png"
-dest_files=["res://.godot/imported/Tools.png-84e7b7e26732f11135fd87fa085cf7a0.ctex"]
+source_file="res://Sprout_Lands-Sprites-Basic_pack/Characters/Tools.png"
+dest_files=["res://.godot/imported/Tools.png-4051a9180a2e161d848bd6c24306e691.ctex"]
 
 [params]
 
