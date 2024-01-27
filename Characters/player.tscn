@@ -1,8 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://bm25vsys6et4a"]
+[gd_scene load_steps=31 format=3 uid="uid://bm25vsys6et4a"]
 
 [ext_resource type="Script" path="res://Characters/player.gd" id="1_nbl5i"]
 [ext_resource type="Texture2D" uid="uid://kwp8pj5nkjd1" path="res://Sprout_Lands-Sprites-Basic_pack/Characters/MainPersonnage.png" id="2_lfm67"]
-[ext_resource type="Texture2D" uid="uid://t6mqvxdwbueh" path="res://Sprout_Lands-Sprites-Basic_pack/Characters/dead.png" id="2_ybjkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skr3x"]
 size = Vector2(31.625, 6)
@@ -21,17 +20,21 @@ tracks/0/keys = {
 "update": 0,
 "values": [0]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("dead:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+
+[sub_resource type="Animation" id="Animation_lx4ji"]
+resource_name = "dead"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [16, 17, 18, 19]
 }
 
 [sub_resource type="Animation" id="Animation_v18mf"]
@@ -166,22 +169,6 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="Animation" id="Animation_lx4ji"]
-resource_name = "dead"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("dead:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ksuu7"]
 _data = {
 "RESET": SubResource("Animation_t8vy2"),
@@ -246,17 +233,17 @@ min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_83hrm"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8t0t1"]
 animation = &"dead"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nnqr5"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_65mx2"]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sacly"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n1ed1"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_65mx2"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i1l8j"]
 switch_mode = 2
 advance_mode = 2
 
@@ -267,26 +254,20 @@ states/Idle/position = Vector2(289, 99)
 states/Start/position = Vector2(101, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_2j2qv")
 states/Walk/position = Vector2(493, 101)
-states/dead/node = SubResource("AnimationNodeAnimation_83hrm")
-states/dead/position = Vector2(663, 100)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_nnqr5"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_65mx2"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_sacly"), "Walk", "dead", SubResource("AnimationNodeStateMachineTransition_n1ed1")]
+states/dead/node = SubResource("AnimationNodeAnimation_8t0t1")
+states/dead/position = Vector2(681, 99)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_nnqr5"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_sacly"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_65mx2"), "Walk", "dead", SubResource("AnimationNodeStateMachineTransition_i1l8j")]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(7, -4)
 script = ExtResource("1_nbl5i")
-
-[node name="dead" type="Sprite2D" parent="."]
-position = Vector2(314, 82)
-texture = ExtResource("2_ybjkn")
-hframes = 4
-vframes = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(21, -46)
 scale = Vector2(0.347005, 0.330599)
 texture = ExtResource("2_lfm67")
 hframes = 4
-vframes = 4
+vframes = 5
 
 [node name="Camera2D" type="Camera2D" parent="Sprite2D"]
 zoom = Vector2(0.7, 0.7)
@@ -306,5 +287,5 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_6fhmq")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = Vector2(0.00383878, 0.843915)
-parameters/Walk/blend_position = Vector2(-0.00191939, 0.995238)
+parameters/Idle/blend_position = Vector2(0.287931, 0.00582004)
+parameters/Walk/blend_position = Vector2(0.248276, 0.00582004)
