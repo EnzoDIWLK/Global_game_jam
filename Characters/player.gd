@@ -10,6 +10,7 @@ extends CharacterBody2D
 
 func set_death(value):
 	dead = value
+	print("value set")
 
 func _ready():
 	update_animation_parameters(starting_direction, dead)
@@ -25,10 +26,11 @@ func _physics_process(_delta):
 	move_and_slide()
  
 func update_animation_parameters(move_input : Vector2, is_dead : bool):
-	if dead:
-		animation_tree.set("parameters/dead/blend_position", move_input)
+	if is_dead:
+		animation_tree.set("parameters/pouet/blend_position", move_input)
 		return true
-	if (move_input != Vector2.ZERO):
-		animation_tree.set("parameters/Walk/blend_position", move_input)
-	animation_tree.set("parameters/Idle/blend_position", move_input)
-	return true
+	else:
+		if (move_input != Vector2.ZERO):
+			animation_tree.set("parameters/Walk/blend_position", move_input)
+		animation_tree.set("parameters/Idle/blend_position", move_input)
+		return true

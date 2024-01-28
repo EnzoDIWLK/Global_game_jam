@@ -43,6 +43,7 @@ position = Vector2(51.9688, 12.3125)
 scale = Vector2(0.129514, 0.107292)
 sprite_frames = SubResource("SpriteFrames_j2tqf")
 animation = &"meche"
+frame_progress = 0.851933
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(53, 17)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://i7i4i3ytoqt8"]
 
-[ext_resource type="Texture2D" uid="uid://dvo4vqtjvpxu1" path="res://Sprout_Lands-Sprites-Basic_pack/Objects/Egg_item.png" id="1_1p7ma"]
+[ext_resource type="Texture2D" uid="uid://cg3n8w4fd4atu" path="res://Sprout_Lands-Sprites-Basic_pack/Objects/flower.png" id="1_5p4lt"]
 
 [sub_resource type="GDScript" id="GDScript_0lb47"]
 script/source = "extends CharacterBody2D
@@ -45,13 +45,12 @@ radius = 12.0
 script = SubResource("GDScript_0lb47")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2.5, -3.5)
-scale = Vector2(1.3125, 1.4375)
-texture = ExtResource("1_1p7ma")
+position = Vector2(2.83008, -4)
+scale = Vector2(0.0461837, 0.0432331)
+texture = ExtResource("1_5p4lt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -3)
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_y2vke")
 
 [node name="PlayerDetection" type="Area2D" parent="."]

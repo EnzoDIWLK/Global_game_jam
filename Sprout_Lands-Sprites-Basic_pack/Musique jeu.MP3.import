@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rduj5xp3uk7m"
+path="res://.godot/imported/Musique jeu.MP3-d3f2372e03d99e884cccfa60ee8a28ba.mp3str"
+
+[deps]
+
+source_file="res://Sprout_Lands-Sprites-Basic_pack/Musique jeu.MP3"
+dest_files=["res://.godot/imported/Musique jeu.MP3-d3f2372e03d99e884cccfa60ee8a28ba.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://daekxivq6u2iu"]
+
+[ext_resource type="AudioStream" uid="uid://rduj5xp3uk7m" path="res://Sprout_Lands-Sprites-Basic_pack/Musique jeu.MP3" id="1_rob2b"]
+
+[sub_resource type="GDScript" id="GDScript_d3iqp"]
+script/source = "extends AudioStreamPlayer2D
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	play() 
+"
+
+[node name="MusicGame" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_rob2b")
+volume_db = 0.937
+script = SubResource("GDScript_d3iqp")
