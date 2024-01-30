@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://24imk5iunr14"]
+
+[ext_resource type="Texture2D" uid="uid://b2hmw1g2y85st" path="res://Sprout_Lands-Sprites-Basic_pack/Map/image002(1).png" id="1_8ogvf"]
+
+[node name="death" type="Node2D"]
+
+[node name="death" type="Sprite2D" parent="."]
+position = Vector2(-957, -547)
+texture = ExtResource("1_8ogvf")

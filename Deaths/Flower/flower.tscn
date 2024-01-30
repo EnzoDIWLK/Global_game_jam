@@ -22,12 +22,14 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	move_and_slide()
 
-
-
 func _on_death_detection_body_entered(body):
 	if body.name == \"Player\":
 		player = body
 		player.set_death(true)
+		get_tree().change_scene_to_file(\"res://death.tscn\")
+		await get_tree().create_timer(1.0).timeout
+		get_tree().change_scene_to_file(\"res://level/map.tscn\")
+		#do animation
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y2vke"]
