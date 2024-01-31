@@ -27,7 +27,7 @@ func _physics_process(_delta):
  
 func update_animation_parameters(move_input : Vector2, is_dead : bool):
 	if is_dead:
-		animation_tree.set("parameters/pouet/blend_position", move_input)
+		animation_tree.set("parameters/dead/blend_position", move_input)
 		return true
 	else:
 		if (move_input != Vector2.ZERO):
